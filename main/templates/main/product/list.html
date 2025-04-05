@@ -12,9 +12,9 @@
             <h4 class="price-head">Price range: </h4>
             <div class="price-range">
                 <input type="number" name="min_price" id="min_price" placeholder="Min price"
-                       value="{{ min_price }}" oninput="">
+                       value="{{ min_price }}" oninput="debounceApplyFilters()">
                 <input type="number" name="max_price" id="max_price" placeholder="Max price"
-                       value="{{ max_price }}" oninput="">
+                       value="{{ max_price }}" oninput="debounceApplyFilters()">
             </div>
 
             <h4 class="category-head">Category: </h4>
@@ -32,7 +32,7 @@
                     </label>
                 </div>
             {% endfor %}
-            <div class="size-head">
+            <h4 class="size-head">Size: </h4>
                 {% for size in sizes %}
                     <div class="category-option">
                         <input type="checkbox" name="size" id="size-{{ size.name }}" value="{{ size.name }}"
@@ -40,15 +40,14 @@
                         <label for="size-{{ size.name }}">{{ size.name }}</label>
                     </div>
                 {% endfor %}
-            </div>
         </form>
         <div class="product-list">
             <div class="card-container d-flex flex-wrap">
                 {% for item in clothing_items %}
                     <div class="card">
                         {% if item.image %}
-                            <img src="{{ item.image_url }}" alt="{{ item.name }}" class="product-image">
-                        {% endif %}
+                                <img src="{{ item.image.url }}" alt="{{ item.name }}" class="product-image">
+                            {% endif %}
                         <div class="card-info">
                             <h5>{{ item.name }}</h5>
                             <p>$ {{ item.get_price_with_discount }}</p>

@@ -36,11 +36,11 @@
             </div>
             {% if clothing_item.discount %}
                 <div class="cart-discount d-flex gap-2">
-                    <p class="line">${{ clothing_item.price|floatformat:2 }}</p>
-                    <p class="price">${{ clothing_item.get_price_with_discount|floatformat:2 }}</p>
+                    <p class="line">${{ clothing_item.price }}</p>
+                    <p class="price">${{ clothing_item.get_price_with_discount }}</p>
                 </div>
             {% else %}
-                <p class="detail-price">${{ clothing_item.price|floatformat:2 }}</p>
+                <p class="detail-price">${{ clothing_item.price }}</p>
             {% endif %}
             <div class="detail-cart-form">
                 <form action="{% url 'cart:cart_add' clothing_item.id %}" method="post">

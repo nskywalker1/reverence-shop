@@ -19,7 +19,7 @@
         <a href="#" class="h-profile">
             <img src="{% static 'img/profile.png' %}" alt="profile">
         </a>
-        <a href="#" class="h-cart">
+        <a href="{% url 'cart:cart_detail' %}" class="h-cart">
             <img src="{% static 'img/cart.png' %}" alt="cart">
         </a>
         <div class="forsearch">

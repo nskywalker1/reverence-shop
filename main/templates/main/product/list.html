@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    Reverence
+    Reverence Interlude - Catalog
 {% endblock %}
 
 {% block content %}
@@ -50,7 +50,7 @@
                             {% endif %}
                         <div class="card-info">
                             <h5>{{ item.name }}</h5>
-                            <p>$ {{ item.get_price_with_discount }}</p>
+                            <p>$ {{ item.get_price_with_discount|floatformat:2 }}</p>
                         </div>
                     </a>
                 {% empty %}

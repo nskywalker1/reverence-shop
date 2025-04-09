@@ -14,6 +14,7 @@ class CatalogView(ListView):
         size_names = self.request.GET.getlist('size')
         min_price = self.request.GET.get('min_price')
         max_price = self.request.GET.get('max_price')
+        search_query = self.request.GET.get('q')
 
         if category_slugs:
             queryset = queryset.filter(category__slug__in=category_slugs)
@@ -22,6 +23,11 @@ class CatalogView(ListView):
             queryset = queryset.filter(
                 Q(sizes__name__in=size_names) & Q(sizes__clothingitemsize__available=True)
             ).distinct()
+
+        if search_query:
+            queryset = queryset.filter(
+                Q(name__icontains=search_query)
+            )
 
         if min_price:
             queryset = queryset.filter(price__gte=min_price)

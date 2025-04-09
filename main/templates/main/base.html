@@ -12,11 +12,11 @@
 </head>
 <body>
 <header class="header sticky-top d-flex align-items-center">
-    <div class="header-logo">
+    <a href="{% url 'main:catalog' %}" class="header-logo">
         <img src="{% static 'img/rev.png' %}" alt="logo">
-    </div>
+    </a>
     <div class="header-nav d-flex gap-4">
-        <a href="#" class="h-profile">
+        <a href="{% url 'users:profile' %}" class="h-profile">
             <img src="{% static 'img/profile.png' %}" alt="profile">
         </a>
         <a href="{% url 'cart:cart_detail' %}" class="h-cart">

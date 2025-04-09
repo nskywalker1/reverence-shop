@@ -7,7 +7,7 @@ from main.models import Size
 from django.conf import settings
 import stripe
 
-stripe.api_key = settings.STRIPE_SECRET_KEY
+stripe.api_key = settings.STRIPE_TEST_SECRET_KEY
 
 
 @login_required(login_url='users:login')
@@ -64,7 +64,7 @@ def order_create(request):
                     'cart': cart,
                     'error': str(e)
                 })
-    form = OrderForm(inital={
+    form = OrderForm(initial={
         'first_name': request.user.first_name,
         'last_name': request.user.last_name,
         'middle_name': request.user.middle_name,

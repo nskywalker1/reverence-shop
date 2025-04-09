@@ -70,7 +70,7 @@
     {% if cart|length > 0 %}
         <h3 class="total-price-cart mt-3">
             Total price: ${{ cart.get_total_price }}
-            <a href="">Create order</a>
+            <a href="{% url 'orders:order_create' %}">Create order</a>
         </h3>
     {% endif %}
     <script>

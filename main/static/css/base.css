@@ -246,6 +246,11 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
     max-height: 800px;
 }
 
+.detail-image {
+    width: 500px;
+    height: 500px;
+}
+
 .image-nav {
     position: absolute;
     top: 50%;

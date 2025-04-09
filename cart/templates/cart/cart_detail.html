@@ -51,9 +51,10 @@
                                         class="text-center"
                                         name="quantity"
                                         value="{{ item.quantity }}"
-                                        min="1" required
+                                        min="1"
                                         id="quantity-{{ item.item.id }}"
                                         oninput="updateCart({{ item.item.id }})"
+                                        required
                                 >
                                 <a href="{% url 'cart:cart_remove' item.item.id %}">Remove</a>
                             </form>

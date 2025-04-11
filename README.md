@@ -23,4 +23,11 @@ python -m venv venv
 5. Activate the virtual environment:
    For Linux/macOS: `source venv/bin/activate`
    For Windows: `venv\scripts\Activate`
-6.
+6. Install the application requirements by running: `pip install -r requirements.txt`
+7. Create env file in project directory and fill fields POSTGRES_DB, POSTGRES_HOST, POSTGRES_PORT, POSTGRES_USER, PASSWORD
+8. Migrate the database by executing: `python manage.py migrate`
+9. Create account in Stripe site and file fields STRIPE_TEST_PUBLIC_KEY, STRIPE_TEST_SECRET_KEY
+10. Start server: `python manage.py runserver`
+#### Create superuser
+You need to create superuser if you want to add clothing, categories, size etc.:
+`python manage.py createsuperuser`
